@@ -16,50 +16,56 @@ class ResponseGetToken
      * @var string
      * @Serializer\Type("string")
      */
-    protected $tokenType;
+    protected string $tokenType;
 
     /**
      * @var int
      * @Serializer\Type("integer")
      */
-    protected $expiresIn;
+    protected int $expiresIn;
 
     /**
      * @var int
      * @Serializer\Type("integer")
      */
-    protected $extExpiresIn;
+    protected int $extExpiresIn;
 
     /**
-     * @var \DateTimeInterface
+     * @var \DateTimeInterface|int
      * @Serializer\Type("DateTime<'U'>")
      */
-    protected $expiresOn;
+    protected int $expiresOn;
 
     /**
-     * @var \DateTimeInterface
+     * @var \DateTimeInterface|int
      * @Serializer\Type("DateTime<'U'>")
      */
-    protected $notBefore;
+    protected int $notBefore;
 
     /**
      * @var string
      * @Serializer\Type("string")
      */
-    protected $resource;
+    protected string $resource;
 
     /**
      * @var string
      * @Serializer\Type("string")
      */
-    protected $accessToken;
+    protected string $accessToken;
+
+    /**
+     * @var string
+     * @Serializer\Type("string")
+     */
+    protected string $name;
 
     /**
      * Gets accessToken value.
      *
      * @return string
      */
-    public function getAccessToken()
+    public function getAccessToken(): string
     {
         return $this->accessToken;
     }
@@ -69,7 +75,7 @@ class ResponseGetToken
      *
      * @return int
      */
-    public function getExpiresIn()
+    public function getExpiresIn(): int
     {
         return $this->expiresIn;
     }
@@ -77,7 +83,7 @@ class ResponseGetToken
     /**
      * Gets expiresOn value.
      *
-     * @return \DateTimeInterface
+     * @return
      */
     public function getExpiresOn()
     {
@@ -89,7 +95,7 @@ class ResponseGetToken
      *
      * @return int
      */
-    public function getExtExpiresIn()
+    public function getExtExpiresIn(): int
     {
         return $this->extExpiresIn;
     }
@@ -97,7 +103,7 @@ class ResponseGetToken
     /**
      * Gets notBefore value.
      *
-     * @return \DateTimeInterface
+     * @return
      */
     public function getNotBefore()
     {
@@ -109,7 +115,7 @@ class ResponseGetToken
      *
      * @return string
      */
-    public function getResource()
+    public function getResource(): string
     {
         return $this->resource;
     }
@@ -119,8 +125,18 @@ class ResponseGetToken
      *
      * @return string
      */
-    public function getTokenType()
+    public function getTokenType(): string
     {
         return $this->tokenType;
+    }
+
+    /**
+     * Gets tokenName value.
+     *
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
     }
 }
