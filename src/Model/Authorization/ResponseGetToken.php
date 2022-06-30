@@ -16,49 +16,49 @@ class ResponseGetToken
      * @var string
      * @Serializer\Type("string")
      */
-    protected string $tokenType;
+    protected $tokenType;
 
     /**
      * @var int
      * @Serializer\Type("integer")
      */
-    protected int $expiresIn;
+    protected $expiresIn;
 
     /**
      * @var int
      * @Serializer\Type("integer")
      */
-    protected int $extExpiresIn;
+    protected $extExpiresIn;
 
     /**
      * @var \DateTimeInterface|int
      * @Serializer\Type("DateTime<'U'>")
      */
-    protected int $expiresOn;
+    protected $expiresOn;
 
     /**
      * @var \DateTimeInterface|int
      * @Serializer\Type("DateTime<'U'>")
      */
-    protected int $notBefore;
+    protected $notBefore;
 
     /**
      * @var string
      * @Serializer\Type("string")
      */
-    protected string $resource;
+    protected $resource;
 
     /**
      * @var string
      * @Serializer\Type("string")
      */
-    protected string $accessToken;
+    protected $accessToken;
 
     /**
      * @var string
      * @Serializer\Type("string")
      */
-    protected string $name;
+    protected $name;
 
     /**
      * Gets accessToken value.
