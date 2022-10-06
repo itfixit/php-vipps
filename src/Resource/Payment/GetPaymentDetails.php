@@ -26,8 +26,9 @@ class GetPaymentDetails extends PaymentResourceBase
      * @param string $subscription_key
      * @param string $order_id
      */
-    public function __construct(VippsInterface $vipps, $subscription_key, $order_id)
+    public function __construct(VippsInterface $vipps, $subscription_key, $order_id, $merchant_serial_number)
     {
+        $this->headers['Merchant-Serial-Number'] = $merchant_serial_number;
         parent::__construct($vipps, $subscription_key);
         $this->id = $order_id;
     }

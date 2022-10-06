@@ -39,6 +39,7 @@ class RefundPayment extends PaymentResourceBase
         $order_id,
         RequestRefundPayment $requestObject
     ) {
+        $this->headers['Merchant-Serial-Number'] = $requestObject->getMerchantInfo()->getMerchantSerialNumber();
         parent::__construct($vipps, $subscription_key);
         $this->body = $this
             ->getSerializer()

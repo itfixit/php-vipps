@@ -39,10 +39,11 @@ interface PaymentInterface
 
     /**
      * @param string $order_id
+     * @param string $merchant_serial_number
      *
      * @return \zaporylie\Vipps\Model\Payment\ResponseGetPaymentDetails
      */
-    public function getPaymentDetails($order_id);
+    public function getPaymentDetails($order_id, $merchant_serial_number);
 
     /**
      * @param string $order_id

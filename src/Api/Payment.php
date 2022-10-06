@@ -147,14 +147,15 @@ class Payment extends ApiBase implements PaymentInterface
     /**
      * {@inheritdoc}
      */
-    public function getPaymentDetails($order_id)
+    public function getPaymentDetails($order_id, $merchant_serial_number)
     {
         // Get payment details.
         // this is GET request so no need to create request object.
         $resource = new GetPaymentDetails(
             $this->app,
             $this->getSubscriptionKey(),
-            $order_id
+            $order_id,
+            $merchant_serial_number
         );
         $resource->setPath(str_replace('ecomm', $this->customPath, $resource->getPath()));
         /** @var \zaporylie\Vipps\Model\Payment\ResponseGetPaymentDetails $response */

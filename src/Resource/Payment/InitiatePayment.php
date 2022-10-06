@@ -34,6 +34,7 @@ class InitiatePayment extends PaymentResourceBase
      */
     public function __construct(VippsInterface $vipps, $subscription_key, RequestInitiatePayment $requestObject)
     {
+        $this->headers['Merchant-Serial-Number'] = $requestObject->getMerchantInfo()->getMerchantSerialNumber();
         parent::__construct($vipps, $subscription_key);
         $this->body = $this
             ->getSerializer()
